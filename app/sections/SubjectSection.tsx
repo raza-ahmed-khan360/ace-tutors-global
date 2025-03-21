@@ -58,7 +58,7 @@ const SubjectRow: React.FC<{ subjects: any[]; direction: 'left' | 'right' }> = (
 const SubjectSection: React.FC = () => {
   return (
     <div className="w-full bg-white flex flex-col items-center py-10 sm:py-12 md:py-16 px-4 sm:px-6 md:px-12 lg:px-16 overflow-hidden">
-      <h2 className="text-indigo-950 text-2xl sm:text-3xl md:text-5xl font-bold font-['Plus_Jakarta_Sans'] text-center mb-6 sm:mb-8">
+      <h2 className="text-indigo-950 text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter font-['Plus_Jakarta_Sans'] text-center mb-6 sm:mb-8">
         Subjects
       </h2>
 

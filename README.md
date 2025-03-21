@@ -1,3 +1,7 @@
+# Ace Tutors Global
+
+Ace Tutors Global is a web application built using Next.js, designed to provide an online platform for tutoring services. The project leverages modern web technologies to deliver a seamless user experience.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

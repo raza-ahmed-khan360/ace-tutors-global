@@ -55,7 +55,7 @@ const FeatureItem: React.FC<{ feature: any; index: number }> = ({
         height={112}
         className="w-28 h-28 object-contain"
       />
-      <h3 className="text-white text-2xl md:text-3xl font-bold font-['Plus_Jakarta_Sans']">
+      <h3 className="text-white tracking-tighter text-2xl md:text-3xl font-semibold font-['Plus_Jakarta_Sans']">
         {feature.title}
       </h3>
       <p className="text-white text-base md:text-lg font-normal font-['Poppins']">
