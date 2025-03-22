@@ -26,7 +26,13 @@ const features = [
   },
 ]
 
-const FeatureItem: React.FC<{ feature: any; index: number }> = ({
+interface Feature {
+  title: string
+  description: string
+  image: string
+}
+
+const FeatureItem: React.FC<{ feature: Feature; index: number }> = ({
   feature,
   index,
 }) => {
@@ -41,6 +47,7 @@ const FeatureItem: React.FC<{ feature: any; index: number }> = ({
 
   return (
     <motion.div
+      id='features'
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={controls}

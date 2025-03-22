@@ -50,7 +50,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex-1 min-w-[200px]"
         >
-          <h3 className="text-xl font-semibold mb-3 font-['Plus_Jakarta_Sans']">We're here to help</h3>
+          <h3 className="text-xl font-semibold mb-3 font-['Plus_Jakarta_Sans']">We&apos;re here to help</h3>
           <a href="mailto:info@acetutorsglobal.com" className="flex pt-3 items-center gap-3 hover:text-indigo-300 transition">
             <Image src="/assets/gmail.svg" alt="Email" width={50} height={50} />
             Contact Us

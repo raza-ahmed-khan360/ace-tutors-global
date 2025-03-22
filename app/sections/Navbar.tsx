@@ -6,12 +6,12 @@ import Link from "next/link";
 
 // Navigation Data
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Subjects", href: "#" },
-  { name: "Testimonials", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "Features", href: "#features" },
+  { name: "Subjects", href: "#subjects" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#" },
-  { name: "FAQs", href: "#" },
+  { name: "FAQs", href: "#faqs" },
 ];
 
 const Navbar: React.FC = () => {
@@ -34,13 +34,13 @@ const Navbar: React.FC = () => {
         {/* Navigation Links - Desktop */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
               href={link.href}
               className="text-indigo-950 text-lg lg:text-xl font-medium hover:text-indigo-700 transition"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 

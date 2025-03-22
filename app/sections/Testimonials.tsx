@@ -49,6 +49,7 @@ const scrollVariants = {
 function Testimonials() {
   return (
     <div 
+      id='testimonials'
       className="relative bg-indigo-950 py-20 overflow-hidden"
       style={{ backgroundImage: "url('/assets/Testimonials-bg.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >

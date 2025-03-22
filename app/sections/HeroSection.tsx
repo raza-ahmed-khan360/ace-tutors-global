@@ -15,7 +15,7 @@ const heroData = [
 ];
 
 const HeroSection: React.FC = () => {
-  const { title, description, buttonText, videoSrc, courses } = heroData[0];
+  const { title, description, buttonText, videoSrc } = heroData[0];
 
   return (
     <div className="h-[660px] md:h-[600px] lg:h-[500px] flex items-center justify-center px-6 md:px-10 overflow-hidden">

@@ -84,14 +84,14 @@ export default function FAQs() {
     const visibleFAQs = faqs.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
     return (
-        <div className="w-full bg-white py-20 px-6 md:px-12 lg:px-24 text-indigo-950">
+        <div id='faqs' className="w-full bg-white py-20 px-6 md:px-12 lg:px-24 text-indigo-950">
             <h2 className="text-center text-5xl font-bold font-['Plus_Jakarta_Sans'] mb-12">FAQs</h2>
             <div className="max-w-4xl mx-auto space-y-6">
                 {visibleFAQs.map((faq, index) => (
                     <div key={index} className="bg-slate-50 p-6 rounded-xl shadow-md border border-indigo-200">
                         <motion.button
                             onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
-                            className="flex justify-between items-center w-full text-left text-xl font-semibold font-['Poppins']"
+                            className="flex justify-between items-center w-full text-left text-lg lg:text-xl font-semibold font-['Poppins']"
                         >
                             {faq.question}
                             <span className="text-2xl">{expandedIndex === index ? '-' : '+'}</span>
