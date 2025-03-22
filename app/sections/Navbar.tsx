@@ -18,13 +18,13 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky bg-white py-6 px-6 md:px-16 lg:px-28 shadow-md">
+    <nav className="w-full sticky bg-white py-6 px-6 md:px-16 lg:px-28">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href={"/"}>
           <Image
             alt="logo"
-            src="/assets/logo.png"
+            src="/assets/Logo-main.svg"
             width={100}
             height={64}
             className="w-28 h-auto md:w-36 lg:w-34"

@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => {
   const { title, description, buttonText, videoSrc, courses } = heroData[0];
 
   return (
-    <div className="h-screen flex items-center justify-center px-6 md:px-10 overflow-hidden">
+    <div className="h-[660px] md:h-[600px] lg:h-[500px] flex items-center justify-center px-6 md:px-10 overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 50 }} 
         animate={{ opacity: 1, y: 0 }} 
@@ -51,24 +51,10 @@ const HeroSection: React.FC = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }} 
-              className="w-full md:w-auto px-6 py-4 bg-indigo-950 hover:bg-indigo-800 text-white text-lg font-semibold rounded-xl transition-all duration-300"
+              className="w-full md:w-auto px-6 py-4 bg-indigo-950 font-['Poppins'] hover:bg-indigo-800 text-white text-lg font-semibold rounded-xl transition-all duration-300"
             >
               {buttonText}
             </motion.button>
-            
-            {/* Course List */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }} 
-              className="text-indigo-950 text-lg md:text-xl leading-7"
-            >
-              <span className="font-bold text-2xl">📚 </span>
-              <span>Expert Tutoring for </span>
-              <span className="font-bold block">
-                {courses.join(' | ')}
-              </span>
-            </motion.div>
           </div>
         </motion.div>
 

@@ -53,7 +53,7 @@ function Testimonials() {
       style={{ backgroundImage: "url('/assets/Testimonials-bg.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       {/* Testimonial Heading */}
-      <h2 className="text-center text-white text-5xl font-['Plus_Jakarta_Sans'] tracking-tighter font-semibold mb-10">
+      <h2 className="text-center text-white text-4xl md:text-6xl font-['Plus_Jakarta_Sans'] tracking-tighter font-semibold mb-10">
         Students and Parents Testimonials
       </h2>
 

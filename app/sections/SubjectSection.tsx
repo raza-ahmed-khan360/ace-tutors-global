@@ -27,7 +27,7 @@ const scrollVariants = (direction: 'left' | 'right') => ({
     x: direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'], // Moves half the duplicated list
     transition: {
       ease: 'linear',
-      duration: 10, 
+      duration: 50, 
       repeat: Infinity,
     },
   },
@@ -35,7 +35,7 @@ const scrollVariants = (direction: 'left' | 'right') => ({
 
 const SubjectRow: React.FC<{ subjects: any[]; direction: 'left' | 'right' }> = ({ subjects, direction }) => {
   return (
-    <div className="w-full overflow-hidden relative">
+    <div className="w-full overflow-hidden py-4 relative">
       <motion.div
         variants={scrollVariants(direction)}
         animate="animate"
@@ -58,7 +58,7 @@ const SubjectRow: React.FC<{ subjects: any[]; direction: 'left' | 'right' }> = (
 const SubjectSection: React.FC = () => {
   return (
     <div className="w-full bg-white flex flex-col items-center py-10 sm:py-12 md:py-16 px-4 sm:px-6 md:px-12 lg:px-16 overflow-hidden">
-      <h2 className="text-indigo-950 text-2xl sm:text-3xl md:text-5xl font-bold tracking-tighter font-['Plus_Jakarta_Sans'] text-center mb-6 sm:mb-8">
+      <h2 className="text-indigo-950 text-4xl md:text-6xl font-bold pb-4 tracking-tighter font-['Plus_Jakarta_Sans'] text-center mb-6 sm:mb-8">
         Subjects
       </h2>
 
