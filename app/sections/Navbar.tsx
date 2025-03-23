@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Features", href: "#features" },
   { name: "Subjects", href: "#subjects" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#" },
+  { name: "Contact", href: "https://wa.me/+923141087568" },
   { name: "FAQs", href: "#faqs" },
 ];
 
@@ -45,10 +45,11 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Enroll Now Button - Desktop */}
+        <Link href={'#form'}>
         <button className="hidden md:flex px-5 py-3 bg-indigo-950 text-white text-lg lg:text-xl font-semibold rounded-lg hover:bg-indigo-800 transition">
           Enroll Now
         </button>
-
+        </Link>
         {/* Mobile Menu Button & Enroll Button */}
         <div className="md:hidden flex items-center gap-4">
           <button className="px-5 py-2 bg-indigo-950 text-white text-lg font-semibold rounded-lg hover:bg-indigo-800 transition">
@@ -73,13 +74,13 @@ const Navbar: React.FC = () => {
           className="md:hidden flex flex-col items-center gap-6 mt-4 bg-white py-4 shadow-lg"
         >
           {navLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
               href={link.href}
               className="text-indigo-950 text-lg font-medium hover:text-indigo-700 transition"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </motion.div>
       )}

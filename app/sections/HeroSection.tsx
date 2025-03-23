@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link';
 
 // Data Array
 const heroData = [
@@ -46,16 +47,18 @@ const HeroSection: React.FC = () => {
           >
             {description}
           </motion.p>
-          <div className="flex flex-col md:flex-row items-center gap-6 w-full">
-            {/* Button */}
-            <motion.button 
-              whileHover={{ scale: 1.05 }} 
-              whileTap={{ scale: 0.95 }} 
-              className="w-full md:w-auto px-6 py-4 bg-indigo-950 font-['Poppins'] hover:bg-indigo-800 text-white text-lg font-semibold rounded-xl transition-all duration-300"
-            >
-              {buttonText}
-            </motion.button>
-          </div>
+            <Link href="#form">
+              <div className="flex flex-col md:flex-row items-center gap-6 w-full">
+                {/* Button */}
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }} 
+                    whileTap={{ scale: 0.95 }} 
+                    className="w-full md:w-auto px-6 py-4 bg-indigo-950 font-['Poppins'] hover:bg-indigo-800 text-white text-lg font-semibold rounded-xl transition-all duration-300"
+                  >
+                    {buttonText}
+                  </motion.button>
+              </div>
+            </Link>
         </motion.div>
 
         {/* Right Video */}

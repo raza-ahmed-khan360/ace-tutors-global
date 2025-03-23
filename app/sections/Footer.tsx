@@ -6,7 +6,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-indigo-950 text-white  py-12 px-6 md:px-12 lg:px-24 font-['Poppins']">
+    <footer className="bg-indigo-950 text-white py-12 px-6 md:px-12 lg:px-24 font-['Poppins']">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-8">
         
         {/* Logo & Description */}
@@ -31,11 +31,19 @@ const Footer = () => {
         >
           <h3 className="text-xl font-semibold mb-3 font-['Plus_Jakarta_Sans']">Quick Links</h3>
           <ul className="space-y-2">
-            {['Home', 'Features', 'Subjects', 'Testimonials', 'FAQs', 'Privacy Policy', 'Terms & Conditions'].map((link, index) => (
+            {[
+              { name: 'Home', href: '/' },
+              { name: 'Features', href: '#features' },
+              { name: 'Subjects', href: '#subjects' },
+              { name: 'Testimonials', href: '#testimonials' },
+              { name: 'FAQs', href: '#faqs' },
+              { name: 'Privacy Policy', href: '/privacy-policy' },
+              { name: 'Terms & Conditions', href: '/terms-and-conditions' },
+            ].map((link, index) => (
               <li key={index}>
                 <motion.div whileHover={{ scale: 1.1, color: "#A3BFFA" }} className="text-lg transition block">
-                  <Link href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} passHref>
-                    {link}
+                  <Link href={link.href}>
+                    {link.name}
                   </Link>
                 </motion.div>
               </li>
@@ -51,14 +59,14 @@ const Footer = () => {
           className="flex-1 min-w-[200px]"
         >
           <h3 className="text-xl font-semibold mb-3 font-['Plus_Jakarta_Sans']">We&apos;re here to help</h3>
-          <a href="mailto:info@acetutorsglobal.com" className="flex pt-3 items-center gap-3 hover:text-indigo-300 transition">
+          <Link href="mailto:info@acetutorsglobal.com" className="flex pt-3 items-center gap-3 hover:text-indigo-300 transition">
             <Image src="/assets/gmail.svg" alt="Email" width={50} height={50} />
             Contact Us
-          </a>
-          <a href="#" className="flex items-center gap-3 pt-3 hover:text-green-400 transition mt-2">
+          </Link>
+          <Link href="https://wa.me/+923141087568" className="flex items-center gap-3 pt-3 hover:text-green-400 transition mt-2">
             <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={50} height={50} />
             Message us on WhatsApp
-          </a>
+          </Link>
         </motion.div>
 
         {/* Social Media */}
@@ -70,11 +78,18 @@ const Footer = () => {
         >
           <h3 className="text-xl font-semibold mb-3 font-['Plus_Jakarta_Sans']">Social Media</h3>
           <p className="text-lg mb-3 pt-3">Follow us for updates & study tips</p>
-          <div className="flex gap-4 pt-3">
-            {['x', 'fb', 'insta', 'in'].map((icon, index) => (
+            <div className="flex gap-4 pt-3">
+            {[
+              { icon: 'x', url: 'https://twitter.com/' },
+              { icon: 'fb', url: 'https://facebook.com/' },
+              { icon: 'insta', url: 'https://instagram.com/' },
+              { icon: 'in', url: 'https://linkedin.com/' },
+            ].map(({ icon, url }, index) => (
               <motion.a 
                 key={index} 
-                href="#" 
+                href={url} 
+                target="_blank" 
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }} 
                 className="transition"
               >
@@ -82,6 +97,7 @@ const Footer = () => {
               </motion.a>
             ))}
           </div>
+
         </motion.div>
       </div>
 
