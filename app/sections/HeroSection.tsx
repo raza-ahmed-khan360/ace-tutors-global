@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
         >
           <motion.h1 
             whileHover={{ scale: 1.02 }} 
-            className="text-indigo-950 text-4xl md:text-6xl font-bold leading-tight md:leading-[69px] tracking-tighter"
+            className="text-indigo-950 text-4xl md:text-6xl font-['Plus_Jakarta_Sans'] font-bold leading-tight md:leading-[69px] tracking-tighter"
           >
             {title}
           </motion.h1>
@@ -43,12 +43,12 @@ const HeroSection: React.FC = () => {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ duration: 1, delay: 0.5 }} 
-            className="text-indigo-950 text-lg md:text-xl leading-7"
+            className="text-indigo-950 font-['Poppins'] text-lg md:text-xl leading-7"
           >
             {description}
           </motion.p>
-            <Link href="#form">
-              <div className="flex flex-col md:flex-row items-center gap-6 w-full">
+            <Link href="#form" className='w-full'>
+              <div className="flex flex-col md:flex-row items-center gap-6">
                 {/* Button */}
                   <motion.button 
                     whileHover={{ scale: 1.05 }} 

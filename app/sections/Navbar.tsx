@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Features", href: "#features" },
   { name: "Subjects", href: "#subjects" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "https://wa.me/+923141087568" },
+  { name: "Contact", href: `https://wa.me/${process.env.OWNER_WA_NUMBER}` },
   { name: "FAQs", href: "#faqs" },
 ];
 
@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky bg-white py-6 px-6 md:px-16 lg:px-28">
+    <nav className="w-full sticky top-0 z-10 bg-white py-6 px-6 md:px-16 lg:px-28">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href={"/"}>
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             <Link
               key={index}
               href={link.href}
-              className="text-indigo-950 text-lg lg:text-xl font-medium hover:text-indigo-700 transition"
+              className="text-indigo-950 text-lg font-['Poppins'] lg:text-xl font-medium hover:text-indigo-700 transition"
             >
               {link.name}
             </Link>
@@ -46,13 +46,13 @@ const Navbar: React.FC = () => {
 
         {/* Enroll Now Button - Desktop */}
         <Link href={'#form'}>
-        <button className="hidden md:flex px-5 py-3 bg-indigo-950 text-white text-lg lg:text-xl font-semibold rounded-lg hover:bg-indigo-800 transition">
+        <button className="hidden md:flex px-5 py-3 font-['Poppins'] bg-indigo-950 text-white text-lg lg:text-xl font-semibold rounded-lg hover:bg-indigo-800 transition">
           Enroll Now
         </button>
         </Link>
         {/* Mobile Menu Button & Enroll Button */}
         <div className="md:hidden flex items-center gap-4">
-          <button className="px-5 py-2 bg-indigo-950 text-white text-lg font-semibold rounded-lg hover:bg-indigo-800 transition">
+          <button className="px-5 py-2 bg-indigo-950 font-['Poppins'] text-white text-lg font-semibold rounded-lg hover:bg-indigo-800 transition">
             Enroll
           </button>
           <button
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
             <Link
               key={index}
               href={link.href}
-              className="text-indigo-950 text-lg font-medium hover:text-indigo-700 transition"
+              className="text-indigo-950 text-lg font-['Poppins'] font-medium hover:text-indigo-700 transition"
             >
               {link.name}
             </Link>

@@ -24,6 +24,32 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment Setup
+
+1. Create a `.env.local` file in the root directory (if not exists)
+2. Add the following environment variables:
+
+```env
+# Email Configuration
+EMAIL_USER=your-email@gmail.com      # Gmail address for sending emails
+EMAIL_PASS=your-app-specific-password # Gmail app-specific password
+OWNER_EMAIL=your-email@domain.com    # Email where notifications will be sent
+OWNER_WA_NUMBER=+1234567890         # WhatsApp number with country code
+
+# Social Media Links
+TWITTER_URL=https://twitter.com/yourhandle
+FACEBOOK_URL=https://facebook.com/yourpage
+INSTAGRAM_URL=https://instagram.com/yourprofile
+LINKEDIN_URL=https://linkedin.com/in/yourprofile
+```
+
+3. For Gmail setup:
+   - Enable 2-Step Verification in your Google Account
+   - Generate an App Password: Google Account > Security > App Passwords
+   - Use the generated 16-character password as EMAIL_PASS
+
+Note: Never commit the `.env.local` file to version control.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -54,8 +54,8 @@ function Testimonials() {
       style={{ backgroundImage: "url('/assets/Testimonials-bg.svg')", backgroundSize: "cover", backgroundPosition: "center" }}
     >
       {/* Testimonial Heading */}
-      <h2 className="text-center text-white text-4xl md:text-6xl font-['Plus_Jakarta_Sans'] tracking-tighter font-semibold mb-10">
-        Students and Parents Testimonials
+      <h2 className="text-center text-white text-4xl md:text-6xl font-['Plus_Jakarta_Sans'] tracking-tighter font-semibold mb-12">
+        Students & Parents Testimonials
       </h2>
 
       {/* Infinite Scrolling Testimonials */}
@@ -69,7 +69,7 @@ function Testimonials() {
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div key={index} className="w-[500px] p-5 bg-gradient-to-b from-indigo-900/20 to-white/10 rounded-2xl backdrop-blur-lg flex flex-col items-center gap-6 shadow-lg">
               <div className="text-white text-7xl font-bold">“</div>
-              <p className="text-white text-lg italic text-center">{testimonial.review}</p>
+              <p className="text-white text-lg italic font-['Poppins'] text-center">{testimonial.review}</p>
 
               {/* Dynamic Star Ratings */}
               <div className="flex gap-1">
@@ -86,12 +86,12 @@ function Testimonials() {
 
               {/* User Info */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center border border-white text-white text-xl font-bold">
+                <div className="w-16 h-16 rounded-full flex items-center font-['Poppins'] justify-center border border-white text-white text-xl font-bold">
                   {testimonial.initials}
                 </div>
                 <div>
-                  <h3 className="text-white text-xl font-bold">{testimonial.name}</h3>
-                  <p className="text-white text-opacity-50 text-sm">{testimonial.location}</p>
+                  <h3 className="text-white text-xl font-['Poppins'] font-bold">{testimonial.name}</h3>
+                  <p className="text-white text-opacity-50 font-['Poppins'] text-sm">{testimonial.location}</p>
                 </div>
               </div>
             </div>

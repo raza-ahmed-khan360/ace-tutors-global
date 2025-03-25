@@ -63,7 +63,10 @@ const Footer = () => {
             <Image src="/assets/gmail.svg" alt="Email" width={50} height={50} />
             Contact Us
           </Link>
-          <Link href="https://wa.me/+923141087568" className="flex items-center gap-3 pt-3 hover:text-green-400 transition mt-2">
+          <Link 
+              href={`https://wa.me/${process.env.OWNER_WA_NUMBER}`} 
+              className="flex items-center gap-3 pt-3 hover:text-green-400 transition mt-2"
+            >
             <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={50} height={50} />
             Message us on WhatsApp
           </Link>
@@ -80,10 +83,10 @@ const Footer = () => {
           <p className="text-lg mb-3 pt-3">Follow us for updates & study tips</p>
             <div className="flex gap-4 pt-3">
             {[
-              { icon: 'x', url: 'https://twitter.com/' },
-              { icon: 'fb', url: 'https://facebook.com/' },
-              { icon: 'insta', url: 'https://instagram.com/' },
-              { icon: 'in', url: 'https://linkedin.com/' },
+              { icon: 'x', url: process.env.TWITTER_URL || 'https://twitter.com/' },
+              { icon: 'fb', url: process.env.FACEBOOK_URL || 'https://facebook.com/' },
+              { icon: 'insta', url: process.env.INSTAGRAM_URL || 'https://instagram.com/' },
+              { icon: 'in', url: process.env.LINKEDIN_URL || 'https://linkedin.com/' },
             ].map(({ icon, url }, index) => (
               <motion.a 
                 key={index} 

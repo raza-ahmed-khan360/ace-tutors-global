@@ -27,7 +27,7 @@ const scrollVariants = (direction: 'left' | 'right') => ({
     x: direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'], // Moves half the duplicated list
     transition: {
       ease: 'linear',
-      duration: 50, 
+      duration: 50,
       repeat: Infinity,
     },
   },
