@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Features", href: "#features" },
   { name: "Subjects", href: "#subjects" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: `https://wa.me/${process.env.OWNER_WA_NUMBER}` },
+  { name: "Contact", href: `https://wa.me/${encodeURIComponent(process.env.OWNER_WA_NUMBER)}` },
   { name: "FAQs", href: "#faqs" },
 ];
 
