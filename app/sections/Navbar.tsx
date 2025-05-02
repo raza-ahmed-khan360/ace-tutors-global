@@ -15,6 +15,7 @@ const navLinks = [
   { name: "FAQs", href: "#faqs" },
 ];
 
+
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
