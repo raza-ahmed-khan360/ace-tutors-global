@@ -34,7 +34,6 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 EMAIL_USER=your-email@gmail.com      # Gmail address for sending emails
 EMAIL_PASS=your-app-specific-password # Gmail app-specific password
 OWNER_EMAIL=your-email@domain.com    # Email where notifications will be sent
-OWNER_WA_NUMBER=+1234567890         # WhatsApp number with country code
 
 # Social Media Links
 TWITTER_URL=https://twitter.com/yourhandle
