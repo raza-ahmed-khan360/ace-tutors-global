@@ -4,15 +4,17 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+const phoneNumber = process.env.OWNER_WA_NUMBER 
 // Navigation Data
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Features", href: "#features" },
   { name: "Subjects", href: "#subjects" },
   { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: `https://wa.me/${encodeURIComponent(process.env.OWNER_WA_NUMBER)}` },
+  { name: "Contact", href: `https://wa.me/${phoneNumber}` },
   { name: "FAQs", href: "#faqs" },
 ];
+
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
