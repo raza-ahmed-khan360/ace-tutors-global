@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
       <div style="font-family: 'Poppins', sans-serif; background-color: #f9fafb; padding: 20px; border-radius: 10px; color: #1e1b4b; max-width: 600px; margin: auto;">
         <!-- Logo Section -->
         <div style="text-align: center; margin-bottom: 20px;">
-          <img src="https://ace-tutors-global.vercel.app/assets/Logo.svg" alt="Logo" style="width: 120px; margin-bottom: 10px;">
+          <img src="https://ace-tutors-global.vercel.app/assets/Logo-main.svg" alt="Logo" style="width: 120px; margin-bottom: 10px;">
           <h2 style="font-size: 24px; font-weight: bold; color: #1e1b4b; margin-bottom: 5px;">New Enrollment Submission</h2>
           <p style="color: #6b7280; font-size: 14px;">A new enrollment form has been submitted.</p>
         </div>
