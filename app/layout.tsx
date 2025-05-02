@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./sections/Navbar";
@@ -71,6 +72,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <SpeedInsights />        
         <Footer />
       </body>
     </html>
