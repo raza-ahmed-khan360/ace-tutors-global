@@ -49,7 +49,6 @@ const subjectsByClass: Record<string, string[]> = {
   "AS": ["Mathematics", "Statistics", "Accounting", "Psychology", "Physics"],
   "A2": ["Mathematics", "Statistics", "Accounting", "Psychology", "Business Studies"],
   "Accelerated": ["Mathematics", "Physics", "Chemistry", "Biology"],
-  // For boards like IGCSE, EDEXCEL, PEARSON, IB
   "01": ["Mathematics", "English Language", "Science", "Social Studies"],
   "02": ["Mathematics", "English Language", "Science", "Computer Studies"],
   "03": ["Mathematics", "English Language", "Physics", "Chemistry", "Biology"],
