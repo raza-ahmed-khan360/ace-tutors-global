@@ -57,7 +57,7 @@ const subjectsByClass: Record<string, string[]> = {
 
 const boards = ["O Levels", "A Levels", "IGCSE", "EDEXCEL", "PEARSON", "IB"];
 const appearingYears = ["2025", "2026"];
-const appearingSessions = ["Spring", "Fall"];
+const appearingSessions = ["Summer", "Winter"];
 
 const EnrollmentForm: React.FC = () => {
   const [forms, setForms] = useState<FormData[]>([
@@ -240,7 +240,7 @@ const EnrollmentForm: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => removeForm(form.id)}
-                    className="absolute top-4 right-2 text-red-600 hover:text-red-800"
+                    className="absolute top-0 right-2 text-red-600 hover:text-red-800"
                   >
                     ❌ Remove
                   </button>
