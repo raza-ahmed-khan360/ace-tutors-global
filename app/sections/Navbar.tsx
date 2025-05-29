@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const phoneNumber = process.env.OWNER_WA_NUMBER 
+
 // Navigation Data
 const navLinks = [
   { name: "Home", href: "/" },

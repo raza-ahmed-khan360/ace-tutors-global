@@ -239,9 +239,9 @@ const EnrollmentForm: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => removeForm(form.id)}
-                    className="absolute top-0 right-2 text-red-600 hover:text-red-800"
+                    className="relative pb-5 hover:cursor-pointer text-red-600 hover:text-red-800"
                   >
-                    ❌ Remove
+                    ❌ Remove Form
                   </button>
                 )}
 
@@ -370,7 +370,7 @@ const EnrollmentForm: React.FC = () => {
             <button
               type="button"
               onClick={addForm}
-              className="flex font-['Poppins'] items-center gap-2 text-indigo-950 px-6 py-2 rounded-lg border border-indigo-950 hover:bg-indigo-100 transition"
+              className="flex font-['Poppins'] hover:cursor-pointer items-center gap-2 text-indigo-950 px-6 py-2 rounded-lg border border-indigo-950 hover:bg-indigo-100 transition"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -379,7 +379,7 @@ const EnrollmentForm: React.FC = () => {
             </button>
             <button
               type="submit"
-              className="flex font-['Poppins'] items-center gap-2 bg-indigo-900 text-white px-6 py-2 rounded-lg hover:bg-indigo-800 transition"
+              className="flex font-['Poppins'] hover:cursor-pointer items-center gap-2 bg-indigo-900 text-white px-6 py-2 rounded-lg hover:bg-indigo-800 transition"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
