@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky top-0 z-10 bg-white py-6 px-6 md:px-16 lg:px-28">
+    <nav className="w-full sticky top-0 z-10 bg-white/30 backdrop-blur-md py-6 px-6 md:px-16 lg:px-28">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href={"/"}>

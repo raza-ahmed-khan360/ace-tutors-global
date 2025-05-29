@@ -113,7 +113,7 @@ export default function FAQs() {
             </div>
 
             {/* Pagination */}
-            <div className="flex justify-center mt-8 space-x-3 text-lg font-['Poppins']">
+            <div className="flex justify-center mt-8 space-x-3 text-lg font-['Poppins'] px-4 sm:px-6 md:px-8">
                 <button
                     onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                     className="px-4 py-2 bg-indigo-950 font-medium text-white rounded-lg hover:bg-indigo-800"
