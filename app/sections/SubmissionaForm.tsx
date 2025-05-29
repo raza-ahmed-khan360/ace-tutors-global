@@ -240,7 +240,7 @@ const EnrollmentForm: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => removeForm(form.id)}
-                    className="absolute top-2 right-2 text-red-600 hover:text-red-800"
+                    className="absolute top-4 right-2 text-red-600 hover:text-red-800"
                   >
                     ❌ Remove
                   </button>
