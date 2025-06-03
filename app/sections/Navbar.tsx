@@ -4,16 +4,16 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const phoneNumber = process.env.OWNER_WA_NUMBER 
+const phoneNumber = process.env.NEXT_PUBLIC_WA_NUMBER 
 
 // Navigation Data
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "#features" },
-  { name: "Subjects", href: "#subjects" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: `https://wa.me/${phoneNumber}` },
-  { name: "FAQs", href: "#faqs" },
+  { name: "Features", href: "/#features" },
+  { name: "Subjects", href: "/#subjects" },
+  { name: "Testimonials", href: "/#testimonials" },
+  { name: "Contact", href: `https://wa.me/${phoneNumber}`, rel:"noopener noreferrer", target:"_blank" },
+  { name: "FAQs", href: "/#faqs" },
 ];
 
 

@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import React from 'react';
 
+const phoneNumber = process.env.NEXT_PUBLIC_WA_NUMBER 
+
 const Footer = () => {
   return (
     <footer className="bg-indigo-950 text-white py-12 px-6 md:px-12 lg:px-24 font-['Poppins']">
@@ -33,10 +35,10 @@ const Footer = () => {
           <ul className="space-y-2">
             {[
               { name: 'Home', href: '/' },
-              { name: 'Features', href: '#features' },
-              { name: 'Subjects', href: '#subjects' },
-              { name: 'Testimonials', href: '#testimonials' },
-              { name: 'FAQs', href: '#faqs' },
+              { name: 'Features', href: '/#features' },
+              { name: 'Subjects', href: '/#subjects' },
+              { name: 'Testimonials', href: '/#testimonials' },
+              { name: 'FAQs', href: '/#faqs' },
               { name: 'Privacy Policy', href: '/privacy-policy' },
               { name: 'Terms & Conditions', href: '/terms-and-conditions' },
             ].map((link, index) => (
@@ -64,7 +66,9 @@ const Footer = () => {
             Contact Us
           </Link>
           <Link 
-              href={`https://wa.me/${process.env.OWNER_WA_NUMBER}`} 
+              href={`https://wa.me/${phoneNumber}`} 
+              rel="noopener noreferrer"
+              target="_blank"
               className="flex items-center gap-3 pt-3 hover:text-green-400 transition mt-2"
             >
             <Image src="/assets/whatsapp.svg" alt="WhatsApp" width={50} height={50} />

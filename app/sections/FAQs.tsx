@@ -91,6 +91,8 @@ export default function FAQs() {
                     <div key={index} className="bg-slate-50 p-6 rounded-xl shadow-md border border-indigo-200">
                         <motion.button
                             onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
+                            onMouseEnter={() => setExpandedIndex(index)}
+                            onMouseLeave={() => setExpandedIndex(null)}
                             className="flex justify-between items-center w-full text-left text-lg lg:text-xl font-semibold font-['Poppins']"
                         >
                             {faq.question}
