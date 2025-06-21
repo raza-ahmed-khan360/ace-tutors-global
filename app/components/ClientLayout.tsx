@@ -3,7 +3,6 @@
 import { usePathname } from 'next/navigation';
 import Navbar from '@/app/sections/Navbar';
 import Footer from '@/app/sections/Footer';
-import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -15,7 +14,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       {!isStudioRoute && <Navbar />}
       {children}
       <SpeedInsights />
-      <Analytics />
       {!isStudioRoute && <Footer />}
     </>
   );

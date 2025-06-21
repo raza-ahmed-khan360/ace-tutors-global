@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 
 interface Testimonial {
@@ -29,7 +28,7 @@ function Testimonials() {
 
   useEffect(() => {
     client.fetch<Testimonial[]>(
-      groq`*[_type == "testimonial"] | order(_createdAt desc){
+      `*[_type == "testimonial"] | order(_createdAt desc){
         name,
         location,
         review,

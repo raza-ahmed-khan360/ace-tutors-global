@@ -1,4 +1,3 @@
-import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import React from 'react';
@@ -49,7 +48,7 @@ const components: PortableTextComponents = {
 };
 export default async function TermsAndConditions() {
   const data = await client.fetch(
-    groq`*[_type == "termsAndConditions"][0]{
+    `*[_type == "termsAndConditions"][0]{
       title,
       content
     }`

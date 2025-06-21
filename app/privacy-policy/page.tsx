@@ -1,4 +1,3 @@
-import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import React from 'react';
@@ -50,7 +49,7 @@ const components: PortableTextComponents = {
 
 export default async function PrivacyPolicy() {
   const data = await client.fetch(
-    groq`*[_type == "privacyPolicy"][0]{
+    `*[_type == "privacyPolicy"][0]{
       title,
       content
     }`
