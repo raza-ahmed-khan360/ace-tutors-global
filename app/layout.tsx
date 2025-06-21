@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./sections/Navbar";
-import Footer from "./sections/Footer";
+import ClientLayout from "./components/ClientLayout";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -22,11 +20,10 @@ export const metadata: Metadata = {
     template: '%s | Ace Tutors Global',
     default: 'Ace Tutors Global - Expert Online Tutoring for International Curricula'
   },
-  description: 'Ace Tutors Global provides expert online tutoring for O Levels, A Levels, IGCSE, IB & more. Get personalized learning with experienced tutors, flexible schedules & proven results.',
-  keywords: ['online tutoring', 'O Levels tutoring', 'A Levels tutoring', 'IGCSE tutoring', 'IB tutoring', 'professional tutors', 'online education', 'expert tutoring', 'international curriculum'],
+  description: 'Ace Tutors Global provides expert online tutoring for O Levels, A Levels, IGCSE, IB & more...',
   openGraph: {
     title: 'Ace Tutors Global - Expert Online Tutoring Services',
-    description: 'Expert online tutoring for O Levels, A Levels, IGCSE & more. Get personalized learning experience from professional tutors.',
+    description: 'Expert online tutoring for O Levels, A Levels, IGCSE & more...',
     url: 'https://www.acetutorsglobal.com',
     siteName: 'Ace Tutors Global',
     type: 'website',
@@ -67,13 +64,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} ${plusJakartaSans.variable} antialiased`}
-      >
-        <Navbar />
-        {children}
-        <SpeedInsights />        
-        <Footer />
+      <body className={`${poppins.variable} ${plusJakartaSans.variable} antialiased`}>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

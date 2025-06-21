@@ -1,6 +1,6 @@
 import FAQs from "./sections/FAQs";
 import FeaturedSection from "./sections/FeaturedSection";
-import HeroSection from "./sections/HeroSection";
+import HeroSectionServer from "./sections/HeroSectionServer";
 import Levels from "./sections/Levels";
 import SubjectSection from "./sections/SubjectSection";
 import EnrollmentForm from "./sections/SubmissionaForm";
@@ -37,7 +37,7 @@ export default function Home() {
       <CourseSchema />
       <FAQSchema />
       <Levels />
-      <HeroSection />
+      <HeroSectionServer />
       <FeaturedSection />
       <SubjectSection />
       <Testimonials />

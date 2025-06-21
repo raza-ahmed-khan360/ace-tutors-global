@@ -25,6 +25,7 @@ function getAllowedClassLevels(selectedBoards: string[]): string[] {
     EDEXCEL: ["01", "02", "03"],
     PEARSON: ["01", "02", "03"],
     IB: ["01", "02", "03"],
+    "Secondary": ["6", "7", "8"],
   };
 
   if (selectedBoards.length === 0) {
@@ -40,22 +41,155 @@ function getAllowedClassLevels(selectedBoards: string[]): string[] {
 
 // Subjects categorized by class level
 const subjectsByClass: Record<string, string[]> = {
-  "6": ["Mathematics", "English Language", "Science", "Social Studies"],
-  "7": ["Mathematics", "English Language", "Science", "Computer Studies"],
-  "8": ["Mathematics", "English Language", "Physics", "Chemistry", "Biology"],
-  "O1": ["Mathematics", "Physics", "Chemistry", "Biology", "Computer Studies", "Business Studies"],
-  "O2": ["Mathematics", "Physics", "Chemistry", "Biology", "Accounting", "Economics"],
-  "O3": ["Mathematics", "Physics", "Chemistry", "Biology", "English Literature"],
-  "AS": ["Mathematics", "Statistics", "Accounting", "Psychology", "Physics"],
-  "A2": ["Mathematics", "Statistics", "Accounting", "Psychology", "Business Studies"],
-  "Accelerated": ["Mathematics", "Physics", "Chemistry", "Biology"],
-  "01": ["Mathematics", "English Language", "Science", "Social Studies"],
-  "02": ["Mathematics", "English Language", "Science", "Computer Studies"],
-  "03": ["Mathematics", "English Language", "Physics", "Chemistry", "Biology"],
+  "O1": [
+    "English Language",
+    "Mathematics", "Biology",
+    "Physics",
+    "Chemistry",
+    "Computer Science",
+    "History",
+    "Geography",
+    "Business Studies",
+    "Art and Design",
+  ],
+  "O2": [
+    "English Language",
+    "Mathematics",
+    "Biology",
+    "Physics",
+    "Chemistry",
+    "Computer Science",
+    "Additional Mathematics",
+    "Business Studies",
+    "Accounting",
+    "Economics",
+    "History",
+    "Geography",
+    "Global Perspectives",
+    "Environmental Management",
+    "Art and Design",
+  ],
+  "O3": [
+    "English Language",
+    "Mathematics",
+    "Biology",
+    "Physics",
+    "Chemistry",
+    "Computer Science",
+    "Additional Mathematics",
+    "Business Studies",
+    "Accounting",
+    "Economics",
+    "History",
+    "Geography",
+    "Global Perspectives",
+    "Environmental Management",
+    "Art and Design",
+  ],
+  "01": [
+  "English Language",
+  "Mathematics",
+  "Science (Combined or Coordinated)",
+  "Computer Science",
+  "Geography",
+  "History",
+  ],
+  "02": [
+  "Biology",
+  "Chemistry",
+  "Physics",
+  "English Literature",
+  "Business Studies",
+  "Economics",
+  "Art and Design",
+  ],
+  "03": [
+  "Additional Mathematics",
+  "Statistics",
+  "Accounting",
+  "Commerce",
+  "Environmental Management",
+  "Global Perspectives",
+  ],
+  "AS": [
+  "English Language",
+  "Biology",
+  "Chemistry",
+  "Physics",
+  "Mathematics",
+  "Computer Science",
+  "Economics",
+  "Business Studies",
+  "Accounting",
+  "History",
+  "Geography",
+  "Environmental Management",
+  "Art and Design",
+  "Global Perspectives",
+  ],
+  "A2": [
+  "English Literature",
+  "Biology",
+  "Chemistry",
+  "Physics",
+  "Mathematics",
+  "Computer Science",
+  "Economics",
+  "Business Studies",
+  "Accounting",
+  "History",
+  "Geography",
+  "Art and Design",
+  ],
+  "Accelerated": [
+  "English Language",
+  "English Literature",
+  "Biology",
+  "Chemistry",
+  "Physics",
+  "Mathematics",
+  "Computer Science",
+  "Economics",
+  "Business Studies",
+  "Accounting",
+  "History",
+  "Geography",
+  "Art and Design",
+  "Environmental Management",
+  "Global Perspectives",
+  ],
+  "6": [
+    "English Language",
+    "Science",
+    "Mathematics",
+    "History",
+    "Geography",
+    "Art and Design",
+    "Computer Science",
+  ],
+  "7": [
+    "English Language",
+    "Science",
+    "Mathematics",
+    "History",
+    "Geography",
+    "Art and Design",
+    "Computer Science",
+  ],
+  "8": [
+    "English Language",
+    "Science",
+    "Mathematics",
+    "History",
+    "Geography",
+    "Art and Design",
+    "Computer Science",
+  ],
 };
 
-const boards = ["O Levels", "A Levels", "IGCSE", "EDEXCEL", "PEARSON", "IB"];
-const appearingYears = ["2025", "2026"];
+const boards = ["O Levels", "A Levels", "IGCSE", "EDEXCEL", "PEARSON", "IB", "Secondary"];
+const currentYear = new Date().getFullYear();
+const appearingYears = [String(currentYear), String(currentYear + 1)];
 const appearingSessions = ["Summer", "Winter"];
 
 const EnrollmentForm: React.FC = () => {
@@ -90,10 +224,10 @@ const EnrollmentForm: React.FC = () => {
       prev.map((form) =>
         form.id === formId
           ? {
-              ...form,
-              [name]: value,
-              ...(name === "classLevel" ? { subjects: [] } : {}),
-            }
+            ...form,
+            [name]: value,
+            ...(name === "classLevel" ? { subjects: [] } : {}),
+          }
           : form
       )
     );
@@ -123,11 +257,11 @@ const EnrollmentForm: React.FC = () => {
       prev.map((form) =>
         form.id === formId
           ? {
-              ...form,
-              subjects: checked
-                ? [...form.subjects, value]
-                : form.subjects.filter((item) => item !== value),
-            }
+            ...form,
+            subjects: checked
+              ? [...form.subjects, value]
+              : form.subjects.filter((item) => item !== value),
+          }
           : form
       )
     );
@@ -213,7 +347,7 @@ const EnrollmentForm: React.FC = () => {
 
         {/* Notification Alert */}
         {notification && (
-           <div className="fixed bottom-4 right-4 md:right-0 md:bottom-4 md:left-auto left-1/2 transform -translate-x-1/2 md:translate-x-0 z-50">
+          <div className="fixed bottom-4 right-4 md:right-0 md:bottom-4 md:left-auto left-1/2 transform -translate-x-1/2 md:translate-x-0 z-50">
             {notification.type === "success" ? (
               <Success
                 title={notification.title}
@@ -349,17 +483,17 @@ const EnrollmentForm: React.FC = () => {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {form.classLevel && subjectsByClass[form.classLevel]
                     ? subjectsByClass[form.classLevel].map((subject) => (
-                        <label key={subject} className="flex items-center gap-2 font-['Poppins'] text-indigo-950">
-                          <input
-                            type="checkbox"
-                            value={subject}
-                            checked={form.subjects.includes(subject)}
-                            onChange={(e) => handleSubjectChange(form.id, e)}
-                            className="w-4 h-4"
-                          />
-                          {subject}
-                        </label>
-                      ))
+                      <label key={subject} className="flex items-center gap-2 font-['Poppins'] text-indigo-950">
+                        <input
+                          type="checkbox"
+                          value={subject}
+                          checked={form.subjects.includes(subject)}
+                          onChange={(e) => handleSubjectChange(form.id, e)}
+                          className="w-4 h-4"
+                        />
+                        {subject}
+                      </label>
+                    ))
                     : null}
                 </div>
               </div>

@@ -35,9 +35,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid form data" }, { status: 400 });
     }
 
-    console.log("=== STARTING ENROLLMENT PROCESS ===");
-    console.log("Processing", forms.length, "enrollment forms");
-    console.log("Form data received:", JSON.stringify(forms, null, 2));
+    // console.log("=== STARTING ENROLLMENT PROCESS ===");
+    // console.log("Processing", forms.length, "enrollment forms");
+    // console.log("Form data received:", JSON.stringify(forms, null, 2));
 
     // Validate environment variables
     const requiredEnvVars = [
@@ -55,9 +55,9 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    console.log("✓ Environment variables validated");
-    console.log("Service Account Email:", process.env.GOOGLE_CLIENT_EMAIL);
-    console.log("Target File ID:", process.env.GOOGLE_DRIVE_FILE_ID);
+    // console.log("✓ Environment variables validated");
+    // console.log("Service Account Email:", process.env.GOOGLE_CLIENT_EMAIL);
+    // console.log("Target File ID:", process.env.GOOGLE_DRIVE_FILE_ID);
 
     // Google Sheets API setup
     const auth = new google.auth.GoogleAuth({
@@ -72,15 +72,15 @@ export async function POST(req: NextRequest) {
     const spreadsheetId = process.env.GOOGLE_DRIVE_FILE_ID as string;
 
     // Check if the sheet exists and get metadata
-    console.log("\n=== CHECKING SPREADSHEET ACCESS ===");
+    // console.log("\n=== CHECKING SPREADSHEET ACCESS ===");
     const spreadsheet = await sheets.spreadsheets.get({
       spreadsheetId,
     });
-    console.log("✓ Spreadsheet accessible");
-    console.log("Spreadsheet title:", spreadsheet.data.properties?.title);
+    // console.log("✓ Spreadsheet accessible");
+    // console.log("Spreadsheet title:", spreadsheet.data.properties?.title);
 
     const sheetName = spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
-    console.log("Target sheet:", sheetName);
+    // console.log("Target sheet:", sheetName);
 
     // Get current data to check headers
     const range = `${sheetName}!A1:J1`;
@@ -113,9 +113,9 @@ export async function POST(req: NextRequest) {
           values: [expectedHeaders],
         },
       });
-      console.log("✓ Headers added/updated");
+      // console.log("✓ Headers added/updated");
     } else {
-      console.log("✓ Headers already present and correct");
+      // console.log("✓ Headers already present and correct");
     }
 
     // Prepare data to append
@@ -132,15 +132,15 @@ export async function POST(req: NextRequest) {
       formatDateToDDMMYYYY(new Date()), // Format timestamp as DD/MM/YYYY
     ]);
 
-    console.log("\n=== APPENDING DATA ===");
-    console.log("Data to append:", JSON.stringify(values, null, 2));
+    // console.log("\n=== APPENDING DATA ===");
+    // console.log("Data to append:", JSON.stringify(values, null, 2));
 
     if (values.length === 0) {
       throw new Error("No data to append");
     }
 
     // Append data starting from row 2
-    const appendResponse = await sheets.spreadsheets.values.append({
+    await sheets.spreadsheets.values.append({
       spreadsheetId,
       range: `${sheetName}!A2`, // Explicitly start from row 2
       valueInputOption: "RAW",
@@ -148,10 +148,6 @@ export async function POST(req: NextRequest) {
         values,
       },
     });
-
-    console.log("✓ Data appended successfully");
-    console.log("Append response:", JSON.stringify(appendResponse.data, null, 2));
-    console.log("Added", appendResponse.data.updates?.updatedRows || 0, "new rows");
 
     // Send email notification
     console.log("\n=== SENDING EMAIL ===");
@@ -217,24 +213,24 @@ export async function POST(req: NextRequest) {
       html: emailBody,
     });
 
-    console.log("✓ Email sent successfully");
-    console.log("=== ENROLLMENT PROCESS COMPLETED ===");
+    // console.log("✓ Email sent successfully");
+    // console.log("=== ENROLLMENT PROCESS COMPLETED ===");
 
     return NextResponse.json({
       success: true,
       message: "Submission successful, spreadsheet updated, and email sent!",
     });
 
-  } catch (error: any) {
-    console.error("\n=== ERROR OCCURRED ===");
-    console.error("Error:", error.message);
-    console.error("Stack:", error.stack);
+  } catch (error) {
+    // console.error("\n=== ERROR OCCURRED ===");
+    // console.error("Error:", error.message);
+    // console.error("Stack:", error.stack);
 
     return NextResponse.json(
       {
         success: false,
         message: "Failed to process enrollment.",
-        error: process.env.NODE_ENV === "development" ? { message: error.message, stack: error.stack } : "Internal server error",
+        error: process.env.NODE_ENV === "development" ? { message: (error as Error).message, stack: (error as Error).stack } : "Internal server error",
       },
       { status: 500 }
     );

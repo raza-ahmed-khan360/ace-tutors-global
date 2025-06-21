@@ -1,40 +1,18 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { groq } from 'next-sanity';
+import { client } from '@/sanity/lib/client';
 
-const testimonials = [
-  {
-    name: "Alexander B.",
-    location: "United Kingdom",
-    review: "Ace Tutors Global is amazing! My tutor was knowledgeable, supportive, and truly invested in my success. They tailored lessons to my learning style, made complex topics easy, and boosted my confidence. Highly recommended!",
-    initials: "AB",
-    rating: 5
-  },
-  {
-    name: "Wania K",
-    location: "Kingdom of Saudi Arabia",
-    review: "Ace Tutors Global connected me with a passionate tutor who tailored lessons to my needs, made learning easier, and boosted my confidence. Their support and clear guidance transformed my understanding. Highly recommended for anyone striving for success!",
-    initials: "WK",
-    rating: 4
-  },
-  {
-    name: "A. Qadir",
-    location: "Dubai, U.A.E",
-    review: "Ace Tutors Global provided exceptional support! My tutor’s patience, clarity, and dedication boosted my confidence and academic success. Highly recommended!",
-    initials: "AQ",
-    rating: 4
-  },
-  {
-    name: "Roxanne A.",
-    location: "United Kingdom",
-    review: "Ace Tutors Global provided my child with a dedicated tutor who offered personalized support, patience, and clear guidance. I've seen a remarkable improvement and highly recommend them!",
-    initials: "RA",
-    rating: 5
-  }
-];
+interface Testimonial {
+  name: string;
+  location: string;
+  review: string;
+  initials: string;
+  rating: number;
+}
 
-// Infinite scrolling animation
 const scrollVariants = {
   animate: {
     x: ["0%", "-100%"],
@@ -47,6 +25,20 @@ const scrollVariants = {
 };
 
 function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    client.fetch<Testimonial[]>(
+      groq`*[_type == "testimonial"] | order(_createdAt desc){
+        name,
+        location,
+        review,
+        initials,
+        rating
+      }`
+    ).then(setTestimonials);
+  }, []);
+
   return (
     <div 
       id='testimonials'
