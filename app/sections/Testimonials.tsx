@@ -17,6 +17,7 @@ const scrollVariants = {
     x: ["0%", "-100%"],
     transition: {
       ease: "linear",
+      repeatType: "loop",
       duration: 80,
       repeat: Infinity,
     },
