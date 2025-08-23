@@ -87,10 +87,8 @@ const Footer = () => {
           <p className="text-lg mb-3 pt-3">Follow us for updates & study tips</p>
             <div className="flex gap-4 pt-3">
             {[
-              { icon: 'x', url: process.env.TWITTER_URL || 'https://twitter.com/' },
-              { icon: 'fb', url: process.env.FACEBOOK_URL || 'https://facebook.com/' },
-              { icon: 'insta', url: process.env.INSTAGRAM_URL || 'https://instagram.com/' },
-              { icon: 'in', url: process.env.LINKEDIN_URL || 'https://linkedin.com/' },
+              { icon: 'fb', url: process.env.FACEBOOK_URL || 'https://www.facebook.com/profile.php?id=61579778784737' },
+              { icon: 'insta', url: process.env.INSTAGRAM_URL || 'https://www.instagram.com/acetutorsglobal' },
             ].map(({ icon, url }, index) => (
               <motion.a 
                 key={index} 
