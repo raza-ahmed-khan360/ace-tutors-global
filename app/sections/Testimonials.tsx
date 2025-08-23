@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { client } from '@/sanity/lib/client';
+import { Variants } from 'framer-motion';
 
 interface Testimonial {
   name: string;
@@ -12,7 +13,7 @@ interface Testimonial {
   rating: number;
 }
 
-const scrollVariants = {
+const scrollVariants: Variants = {
   animate: {
     x: ["0%", "-100%"],
     transition: {
