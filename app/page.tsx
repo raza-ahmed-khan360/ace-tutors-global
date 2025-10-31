@@ -3,7 +3,6 @@ import FeaturedSection from "./sections/FeaturedSection";
 import HeroSectionServer from "./sections/HeroSectionServer";
 import Levels from "./sections/Levels";
 import SubjectSection from "./sections/SubjectSection";
-import EnrollmentForm from "./sections/SubmissionaForm";
 import Testimonials from "./sections/Testimonials";
 import { Metadata } from 'next'
 import JsonLd from './components/JsonLd'
@@ -42,7 +41,6 @@ export default function Home() {
       <SubjectSection />
       <Testimonials />
       <FAQs />
-      <EnrollmentForm />
     </main>
   );
 }
